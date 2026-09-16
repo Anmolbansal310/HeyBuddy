@@ -1,6 +1,14 @@
 import { GoogleGenAI } from '@google/genai';
 
-const ai = new GoogleGenAI({ apiKey: process.env.EXPO_PUBLIC_GEMINI_API_KEY });
+const apiKey = process.env.EXPO_PUBLIC_GEMINI_API_KEY;
+
+if (!apiKey) {
+  throw new Error(
+    'Missing EXPO_PUBLIC_GEMINI_API_KEY. Copy .env.example to .env and add your own Gemini API key from https://aistudio.google.com/apikey'
+  );
+}
+
+const ai = new GoogleGenAI({ apiKey });
 
 export type NoteCategory = {
   name: string;

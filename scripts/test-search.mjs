@@ -1,6 +1,13 @@
 import { GoogleGenAI } from '@google/genai';
 
-const ai = new GoogleGenAI({ apiKey: process.env.EXPO_PUBLIC_GEMINI_API_KEY });
+const apiKey = process.env.EXPO_PUBLIC_GEMINI_API_KEY;
+
+if (!apiKey) {
+  console.error('Missing EXPO_PUBLIC_GEMINI_API_KEY. Copy .env.example to .env and add your own Gemini API key.');
+  process.exit(1);
+}
+
+const ai = new GoogleGenAI({ apiKey });
 
 const NOTES = [
   // Grocery — some explicit, some implicit

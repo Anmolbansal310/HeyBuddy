@@ -25,9 +25,11 @@ Stack: React Native, Expo SDK 54, Gemini 2.5 Flash Lite, AsyncStorage.
 
 ```bash
 npm install
-cp .env.example .env   # add your own Gemini API key
+cp .env.example .env
 npm start
 ```
+
+You'll need your own Gemini API key — get one free at [Google AI Studio](https://aistudio.google.com/apikey) and put it in `.env`. No key ships with this repo, and the app will refuse to start without one.
 
 Back Tap is an iOS accessibility setting: Settings → Accessibility → Touch → Back Tap → Double Tap → memcapture.
 
