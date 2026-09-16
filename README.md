@@ -14,7 +14,6 @@ Its memory connects everyday context to future tasks. Mention a restaurant you l
 
 **Engineering learning:** an early implementation used semantic search at query time, introducing latency, flickering results, and weaker matches than plain text search in my testing. Moving interpretation to capture time — using Gemini to structure incoming notes — made retrieval faster and deterministic. This shaped a core design principle: place AI where interpretation adds value, and keep frequent interactions responsive.
 
-I'm a product manager, not an engineer. I built this using AI as my co-engineer, because I wanted to understand what it actually means to build AI-native products rather than just manage them. What follows is a record of what I learned.
 
 ---
 
@@ -28,6 +27,9 @@ Features:
 - AI-assigned categories with multi-category membership
 - Full-text and metadata search via Fuse.js
 - Edit, delete, category browsing with icons
+- Research on your behalf — mention a gift, a restaurant or a purchase and it comes back with options worth considering, informed by what it already knows about you
+- Ready-to-book and ready-to-buy options — the slot, the basket, the booking prepared up to the final step, with approval left to you
+- Preference memory across tasks — what you chose and what you passed on feeds the next set of suggestions
 
 Stack: React Native, Expo SDK 54, Gemini 2.5 Flash Lite, AsyncStorage.
 
@@ -44,14 +46,6 @@ npm start
 You'll need your own Gemini API key — get one free at [Google AI Studio](https://aistudio.google.com/apikey) and put it in `.env`. No key ships with this repo, and the app will refuse to start without one.
 
 Back Tap is an iOS accessibility setting: Settings → Accessibility → Touch → Back Tap → Double Tap → HeyBuddy.
-
----
-
-## How I built it
-
-I used Claude as my engineering partner throughout. Not as an autocomplete tool — as a collaborator I could reason with. I'd describe what I wanted, push back on its suggestions, ask it to critique its own proposals before implementing, and challenge it when a solution felt wrong even if I couldn't articulate why.
-
-Every architectural decision went through a dialogue. I wasn't accepting the first answer — I was stress-testing it against the product I was trying to build.
 
 ---
 
@@ -94,24 +88,6 @@ The transcription prompt went through three versions. "Rewrite cleanly" — Gemi
 After a native crash in the speech recognition module, the app froze on the splash screen on every subsequent launch. No useful crash log, no JS error. I spent time debugging the build, the bundle, code signing. The actual fix: delete and reinstall. The native crash had left the app container in a state iOS wouldn't launch from.
 
 *Learning:* When something breaks in a way that feels like a code problem but the code hasn't changed, the problem is usually state, not code.
-
----
-
-## The bigger learning
-
-I came into this knowing how to think about products. I left with a much more concrete understanding of where AI makes products genuinely better versus where it creates complexity that looks like value.
-
-The pattern I kept seeing: AI is most powerful when it does the invisible work at the moment of capture — categorising, structuring, enriching — so that everything downstream (search, retrieval, synthesis) can be fast and dumb. When you put AI in the hot path of user interaction, you're betting on latency and reliability you usually don't have.
-
-That's a product principle, not an engineering one. And I wouldn't have found it by reading about AI products — I had to build one and watch it fail the wrong way a few times.
-
----
-
-## What's next
-
-The legwork layer. Today it remembers and organises; next it does the work. Mention a gift you need to buy and it comes back with options worth considering; mention a haircut and it comes back with times that fit. It asks for what it can't know, confirms what it thinks it knows, and never asks the same thing twice — so it needs you less each time. It stops short of booking or buying: the final call stays with the user.
-
-Capture stays free. The intelligence on top is the paid layer.
 
 ---
 
