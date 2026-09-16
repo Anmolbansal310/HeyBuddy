@@ -1,16 +1,18 @@
 # HeyBuddy
 
-**A voice-first assistant that turns scattered thoughts into things actually handled.**
+**A voice-first personal AI assistant that turns everyday thoughts into action.**
 
-You double-tap the back of your phone and say what's on your mind. It cleans up the transcript, works out what the note is about, files it, and makes it searchable — you never organise anything.
+Double-tap your phone and say what's on your mind. HeyBuddy interprets the intent, takes the appropriate next steps, and keeps your information organised — from updating a grocery list to researching a gift for your sister's birthday. It handles the preparation for purchases and bookings, leaving the final approval to you.
 
-**A reminder hands the task back to you.** "Buy sister's birthday gift" is the same problem with a deadline attached — you still have to think of what, still have to go look.
+Its memory connects everyday context to future tasks. Mention a restaurant you like, and it can surface when you later plan a date with your partner. Preferences and past choices inform future assistance, reducing repeated explanation.
 
-This comes back with the work done. It'll ask you a couple of things it couldn't know, then bring back five gifts she'd actually like. Say you need a haircut and it comes back with times that work. And the next time, it asks for less — it knows what you spent, what you chose, what you didn't. **Every time you use it, it needs you less.** It stops before booking or buying. You decide; nothing is left for you to work out.
+**AI capabilities:** intent recognition, structured information extraction, contextual memory, personalised recommendations, and task execution with human approval for purchases and bookings.
 
-The product rests on three hypotheses, each about a different point where things fall through. **If capturing takes no effort, fewer things go uncaptured** — most things never make it to a list because writing them down costs more than the thought feels worth in that moment. **If things are organised as they arrive and easy to find, fewer things get lost after capture** — a note you can't retrieve is the same as a note you never took. And **if it does the work on your behalf, right up to the final decision, fewer things go undone.** That last one matters most: people don't fail to book the appointment because they forgot, they fail because booking it is work, and a reminder removes none of the work.
+**Product thesis:** effortless capture, contextual memory, and proactive assistance can reduce the effort between an intention and its outcome. Success means less work left for the user.
 
-Capture, cleanup, categorisation and search are live and I use it every day. The legwork layer is what I'm building next.
+**Evaluation and iteration:** evaluated the pipeline using scenario-based tests, automated outcome checks, and LLM-as-a-judge assessments. Coverage included speech-to-text accuracy, note organisation, folder creation and merging, retrieval relevance, and research quality. Used the results to refine model behaviour and assess whether HeyBuddy completed the intended task.
+
+**Engineering learning:** an early implementation used semantic search at query time, introducing latency, flickering results, and weaker matches than plain text search in my testing. Moving interpretation to capture time — using Gemini to structure incoming notes — made retrieval faster and deterministic. This shaped a core design principle: place AI where interpretation adds value, and keep frequent interactions responsive.
 
 I'm a product manager, not an engineer. I built this using AI as my co-engineer, because I wanted to understand what it actually means to build AI-native products rather than just manage them. What follows is a record of what I learned.
 
