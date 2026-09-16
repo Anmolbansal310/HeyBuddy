@@ -2,6 +2,7 @@
   "expo": {
     "name": "memcapture",
     "slug": "memcapture",
+    "scheme": "memcapture",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,7 +14,14 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anmol310.memcapture",
+      "infoPlist": {
+        "NSSpeechRecognitionUsageDescription": "Allow $(PRODUCT_NAME) to use speech recognition.",
+        "NSMicrophoneUsageDescription": "Allow $(PRODUCT_NAME) to use the microphone.",
+        "ITSAppUsesNonExemptEncryption": false,
+        "LSApplicationQueriesSchemes": ["settings-navigation", "App-Prefs", "prefs"]
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -21,10 +29,33 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ],
+      "package": "com.anmol310.memcapture"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "memcapture needs microphone access to record your voice notes."
+        }
+      ],
+      "expo-speech-recognition",
+      "expo-asset"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "30bfffe5-f94e-4890-8fce-8caba041192b"
+      }
+    },
+    "owner": "anmol310"
   }
 }
