@@ -1,14 +1,24 @@
-# memcapture
+# HeyBuddy
 
-I'm a product manager. I've never built an iOS app. I built this one anyway — using AI as my co-engineer — because I wanted to understand what it actually means to build AI-native products, not just manage them.
+**A voice-first assistant that turns scattered thoughts into things actually handled.**
 
-This is not a showcase of the app. It's a record of what I learned.
+You double-tap the back of your phone and say what's on your mind. It cleans up the transcript, works out what the note is about, files it, and makes it searchable — you never organise anything.
+
+**A reminder hands the task back to you.** "Buy sister's birthday gift" is the same problem with a deadline attached — you still have to think of what, still have to go look.
+
+This comes back with the work done. It'll ask you a couple of things it couldn't know, then bring back five gifts she'd actually like. Say you need a haircut and it comes back with times that work. And the next time, it asks for less — it knows what you spent, what you chose, what you didn't. **Every time you use it, it needs you less.** It stops before booking or buying. You decide; nothing is left for you to work out.
+
+The product rests on three hypotheses, each about a different point where things fall through. **If capturing takes no effort, fewer things go uncaptured** — most things never make it to a list because writing them down costs more than the thought feels worth in that moment. **If things are organised as they arrive and easy to find, fewer things get lost after capture** — a note you can't retrieve is the same as a note you never took. And **if it does the work on your behalf, right up to the final decision, fewer things go undone.** That last one matters most: people don't fail to book the appointment because they forgot, they fail because booking it is work, and a reminder removes none of the work.
+
+Capture, cleanup, categorisation and search are live and I use it every day. The legwork layer is what I'm building next.
+
+I'm a product manager, not an engineer. I built this using AI as my co-engineer, because I wanted to understand what it actually means to build AI-native products rather than just manage them. What follows is a record of what I learned.
 
 ---
 
-## What the app does
+## What it does today
 
-memcapture is a voice-first personal note capture app for iOS. Double-tap the back of your phone (Back Tap) and it starts recording immediately. Every note is processed in the background by Gemini: speech is cleaned, categorised, tagged, and made searchable. The idea is zero friction capture — think, speak, done.
+Double-tap the back of your phone (Back Tap) and it starts recording immediately. Every note is processed in the background by Gemini: speech is cleaned, categorised, tagged, and made searchable. Zero friction capture — think, speak, done.
 
 Features:
 - Voice and text capture triggered instantly via Back Tap
@@ -31,7 +41,7 @@ npm start
 
 You'll need your own Gemini API key — get one free at [Google AI Studio](https://aistudio.google.com/apikey) and put it in `.env`. No key ships with this repo, and the app will refuse to start without one.
 
-Back Tap is an iOS accessibility setting: Settings → Accessibility → Touch → Back Tap → Double Tap → memcapture.
+Back Tap is an iOS accessibility setting: Settings → Accessibility → Touch → Back Tap → Double Tap → HeyBuddy.
 
 ---
 
@@ -97,7 +107,9 @@ That's a product principle, not an engineering one. And I wouldn't have found it
 
 ## What's next
 
-The roadmap is a second brain — not a work tool, a life tool. Someone living in London with friends, family, a home, routines. The AI surfaces patterns across time: connects the broken bulb mentioned last week to the grocery run being planned today. Capture stays free. Intelligence becomes the paid layer.
+The legwork layer. Today it remembers and organises; next it does the work. Mention a gift you need to buy and it comes back with options worth considering; mention a haircut and it comes back with times that fit. It asks for what it can't know, confirms what it thinks it knows, and never asks the same thing twice — so it needs you less each time. It stops short of booking or buying: the final call stays with the user.
+
+Capture stays free. The intelligence on top is the paid layer.
 
 ---
 

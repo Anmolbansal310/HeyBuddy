@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "memcapture",
+    "name": "HeyBuddy",
     "slug": "memcapture",
     "scheme": "memcapture",
     "version": "1.0.0",
@@ -45,7 +45,7 @@
       [
         "expo-audio",
         {
-          "microphonePermission": "memcapture needs microphone access to record your voice notes."
+          "microphonePermission": "HeyBuddy needs microphone access to record your voice notes."
         }
       ],
       "expo-speech-recognition",
