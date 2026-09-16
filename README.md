@@ -2,7 +2,7 @@
 
 **A voice-first personal AI assistant that turns everyday thoughts into action.**
 
-Double-tap your phone and say what's on your mind. HeyBuddy interprets the intent, takes the appropriate next steps, and keeps your information organised — from updating a grocery list to researching a gift for your sister's birthday. It handles the preparation for purchases and bookings, leaving the final approval to you.
+HeyBuddy gets things done, from your first thought to the final step. A voice-first AI assistant that captures tasks, ideas, plans, and things to remember in one place, organises them, and uses your context to carry tasks through to completion—with your approval before buying or booking.
 
 Its memory connects everyday context to future tasks. Mention a restaurant you like, and it can surface when you later plan a date with your partner. Preferences and past choices inform future assistance, reducing repeated explanation.
 
